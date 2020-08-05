@@ -1,0 +1,3 @@
+firstJoin_Msg: '&a Welcome <player>, to &eExampleServerName!'
+join_Msg: '&b <player> &ajoined.'
+leave_Msg: '&b <player> &cleft.'
