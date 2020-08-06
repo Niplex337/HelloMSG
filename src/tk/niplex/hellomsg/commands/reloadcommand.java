@@ -26,15 +26,16 @@ public class reloadcommand implements CommandExecutor{
 			
 				
 					if (args.length == 0) {
-						player.sendMessage(Utils.chat("&bHelloMSG v1.2 help:"));
+						player.sendMessage(Utils.chat("&bHelloMSG v1.3 help:"));
 						player.sendMessage(Utils.chat("&e/hellomsg &bPlugin help"));
 						player.sendMessage(Utils.chat("&e/hellomsg reload &bReload configuration file"));
 						player.sendMessage(Utils.chat("&e/hellomsg createconfig &bCreate configuration file"));
+						player.sendMessage(Utils.chat("&e/helloinvis &bIncognito mode for Admins"));
 						return true;
 					}
 					if (args[0].equalsIgnoreCase("reload")) {
 						if (player instanceof Player) {
-							if(player.hasPermission("hellomsg.usecommands")) {
+							if(player.hasPermission("hellomsg.admin")) {
 								plugin.reloadConfig();
 								plugin.saveConfig();
 								player.sendMessage(Utils.chat("&eReloaded configuration file of &bHelloMSG"));
@@ -49,8 +50,12 @@ public class reloadcommand implements CommandExecutor{
 					}
 					
 					if (args[0].equalsIgnoreCase("createconfig")) {
-						plugin.saveDefaultConfig();
-						player.sendMessage(Utils.chat("&eCreated configuration file of &bHelloMSG"));
+						if (player instanceof Player) {
+							if (player.hasPermission("hellomsg.admin")) {
+								plugin.saveDefaultConfig();
+								player.sendMessage(Utils.chat("&eCreated configuration file of &bHelloMSG"));
+							}
+						}
 					}
 					
 		return false;

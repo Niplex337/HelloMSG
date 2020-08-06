@@ -31,9 +31,11 @@ public class JoinListener implements Listener{
 				Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin_Msg").replace("<player>", player.getName())));
 			}
 		} else {
-			if (((Plugin) plugin).getConfig().getBoolean("join_enabled") == true) {
-				Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("join_Msg").replace("<player>", player.getName())));
-			}
+			if (!player.hasPermission("hellomsg.incognito")) {
+				if (((Plugin) plugin).getConfig().getBoolean("join_enabled") == true) {
+						Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("join_Msg").replace("<player>", player.getName())));
+			}	} else { player.sendMessage(Utils.chat("&bYou joined as &7&lShadow")); }
+			
 		}
 	}
 	
@@ -42,8 +44,10 @@ public class JoinListener implements Listener{
 		Player player = e.getPlayer();
 		
 		e.setQuitMessage(null);
-		if (((Plugin) plugin).getConfig().getBoolean("leave_enabled") == true) {
-			Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("leave_Msg").replace("<player>", player.getName())));
-		}
+		if (!player.hasPermission("hellomsg.incognito")) {
+			if (((Plugin) plugin).getConfig().getBoolean("leave_enabled") == true) {
+					Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("leave_Msg").replace("<player>", player.getName())));
+			} } else { Bukkit.getLogger().info(Utils.chat(player.getName() + " &cLeft &bas &7&lShadow")); }
+		
 	}
 }
