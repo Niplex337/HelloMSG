@@ -27,9 +27,13 @@ public class JoinListener implements Listener{
 		e.setJoinMessage(null);
 		
 		if (!player.hasPlayedBefore()) {
-			Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin_Msg").replace("<player>", player.getName())));
+			if (((Plugin) plugin).getConfig().getBoolean("firstJoin_enabled") == true) {
+				Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin_Msg").replace("<player>", player.getName())));
+			}
 		} else {
-			Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("join_Msg").replace("<player>", player.getName())));
+			if (((Plugin) plugin).getConfig().getBoolean("join_enabled") == true) {
+				Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("join_Msg").replace("<player>", player.getName())));
+			}
 		}
 	}
 	
@@ -38,7 +42,8 @@ public class JoinListener implements Listener{
 		Player player = e.getPlayer();
 		
 		e.setQuitMessage(null);
-
-		Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("leave_Msg").replace("<player>", player.getName())));
+		if (((Plugin) plugin).getConfig().getBoolean("leave_enabled") == true) {
+			Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("leave_Msg").replace("<player>", player.getName())));
+		}
 	}
 }
