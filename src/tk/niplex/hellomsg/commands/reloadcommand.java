@@ -26,7 +26,7 @@ public class reloadcommand implements CommandExecutor{
 			
 				
 					if (args.length == 0) {
-						player.sendMessage(Utils.chat("&bHelloMSG v1.3 help:"));
+						player.sendMessage(Utils.chat("&bHelloMSG v1.4 help:"));
 						player.sendMessage(Utils.chat("&e/hellomsg &bPlugin help"));
 						player.sendMessage(Utils.chat("&e/hellomsg reload &bReload configuration file"));
 						player.sendMessage(Utils.chat("&e/hellomsg createconfig &bCreate configuration file"));

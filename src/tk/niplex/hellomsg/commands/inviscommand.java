@@ -32,7 +32,7 @@ public class inviscommand implements CommandExecutor{
 			HashMap<UUID,PermissionAttachment> map = new HashMap<>();
 				
 					if (args.length == 0) {
-						player.sendMessage(Utils.chat("&bHelloMSG (Incognito Mode) v1.3 help:"));
+						player.sendMessage(Utils.chat("&bHelloMSG (Incognito Mode) v1.4 help:"));
 						player.sendMessage(Utils.chat("&eTo enable Incognito Mode, give player permission 'hellomsg.incognito' "));
 						player.sendMessage(Utils.chat("&eTo disable it, take permission 'hellomsg.incognito' from player "));
 						player.sendMessage(Utils.chat("&b----------------------------------------------------------------------"));

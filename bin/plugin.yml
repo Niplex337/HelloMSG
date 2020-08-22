@@ -1,8 +1,10 @@
 name: HelloMsg
-version: 1.3
+version: 1.4
 author: Niplex
 main: tk.niplex.hellomsg.Main
 description: This plugin displays Chat Messages on Player First join, join and leave
+
+softdepend: [SuperVanish, PremiumVanish]
 
 commands:
   hellomsg:

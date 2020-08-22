@@ -4,8 +4,16 @@ firstJoin_Msg: '&a Welcome <player>, to &eExampleServerName!'
 join_Msg: '&b <player> &ajoined.'
 leave_Msg: '&b <player> &cleft.'
 
+#Incognito join message
+
+shadow_join: '&bYou joined as &7&lShadow'
+
 #Enable and Disable Messages below.
 
 firstJoin_enabled: true
 join_enabled: true
 leave_enabled: true
+
+#Enable SuperVanish integration
+
+enable_supervanish: true
