@@ -27,12 +27,6 @@ public class JoinListener implements Listener {
         e.setJoinMessage(null);
 
         if (!player.hasPlayedBefore()) {
-            if (((Plugin) plugin).getConfig().getBoolean("jkenable") == true) {
-                List<String> list = (((Plugin) plugin).getConfig().getStringList("items"));
-                ItemStack[] stack = list.toArray(new ItemStack[list.size()]);
-                player.getInventory().addItem(stack);
-                player.updateInventory();
-            }
             if (((Plugin) plugin).getConfig().getBoolean("firstJoin_e") == true) {
                 if (!((Plugin) plugin).getConfig().getStringList("exclude").contains(player.getName())) {
                     Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin").replace("<player>", player.getName())));
