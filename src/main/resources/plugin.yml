@@ -1,0 +1,17 @@
+name: HelloMSG
+author: reversee
+version: ${project.version}
+main: me.reversee.HelloMSG
+description: This plugin displays Chat Messages on Player First join, normal join and leave.
+api-version: 1.16
+
+commands:
+  hellomsg:
+    description: HelloMSG
+    usage: /hellomsg <reload|createconfig>
+    permission: hellomsg.admin
+
+permissions:
+  hellomsg.admin:
+    default: op
+

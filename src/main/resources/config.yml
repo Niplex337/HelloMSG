@@ -1,0 +1,22 @@
+#Messages!
+
+firstJoin: '&a Welcome <player>, to our &eserver'
+join: '&b<player> &ajoined.'
+leave: '&b<player> &cleft.'
+
+#Enable Messages
+
+firstJoin_e: true
+join_e: true
+leave_e: true
+
+#Join Kits!
+jkenable: true
+
+#Items to give
+
+items: ['stone_axe', 'stone_pickaxe', 'stone_shovel', 'stone_hoe', 'water_bucket', 'log', 'log', 'log', 'log', 'log', 'log', 'log', 'log', 'cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop','cooked_porkchop']
+
+#Exclude players
+
+exclude: ['player_excluded_from_showing_join_and_leave_messages']
