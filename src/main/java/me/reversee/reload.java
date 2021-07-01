@@ -33,7 +33,6 @@ class reloadcommand implements CommandExecutor{
             player.sendMessage(Utils.chat("&d V2 Rewrite Changes: "));
             player.sendMessage(Utils.chat("&a * Plugin rewrite, to make code readable, and other stuff!"));
             player.sendMessage(Utils.chat("&a * "));
-            player.sendMessage(Utils.chat("&b + Kits! Specify what items will players recive on first Join!"));
             player.sendMessage(Utils.chat("&c - Goodbye, HelloInvis. Long live Excluding! (wait what?) "));
             player.sendMessage(Utils.chat("&c - Remove create config command... "));
             return true;
