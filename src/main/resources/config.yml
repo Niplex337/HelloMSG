@@ -1,6 +1,6 @@
 #Messages!
 
-firstJoin: '&a Welcome <player>, to our &eserver'
+firstJoin: '&a Welcome &e<player>,&a to our &eserver, &a there is &e<online> &aplayers online, enjoy!'
 join: '&b<player> &ajoined.'
 leave: '&b<player> &cleft.'
 
