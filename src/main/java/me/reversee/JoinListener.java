@@ -27,16 +27,21 @@ public class JoinListener implements Listener {
         e.setJoinMessage(null);
 
         if (!player.hasPlayedBefore()) {
-            if (((Plugin) plugin).getConfig().getBoolean("firstJoin_e") == true) {
-                if (!((Plugin) plugin).getConfig().getStringList("exclude").contains(player.getName())) {
-                    Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin").replace("<player>", player.getName())));
+            if (!((Plugin) plugin).getConfig().getStringList("exclude").contains(player.getName())) {
+                if (((Plugin) plugin).getConfig().getBoolean("firstJoin_e") == true) {
+
+                    String fjoinFormatted = Utils.chat(((Plugin) plugin).getConfig().getString("firstJoin").replace("<player>", player.getName()));
+                    String fjoinFormattedTwice = Utils.chat(fjoinFormatted.replace("<online>", String.valueOf(Bukkit.getOnlinePlayers().size()) ));
+                    Bukkit.broadcastMessage(fjoinFormattedTwice);
 
                 }
             }
         } else {
             if (((Plugin) plugin).getConfig().getBoolean("join_e") == true) {
                 if (!((Plugin) plugin).getConfig().getStringList("exclude").contains(player.getName())) {
-                    Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("join").replace("<player>", player.getName())));
+                    String fjoinFormatted = Utils.chat(((Plugin) plugin).getConfig().getString("join").replace("<player>", player.getName()));
+                    String fjoinFormattedTwice = Utils.chat(fjoinFormatted.replace("<online>", String.valueOf(Bukkit.getOnlinePlayers().size()) ));
+                    Bukkit.broadcastMessage(fjoinFormattedTwice);
                 }
             }
         }
@@ -48,7 +53,9 @@ public class JoinListener implements Listener {
         e.setQuitMessage(null);
         if (((Plugin) plugin).getConfig().getBoolean("leave_e")) {
             if (!((Plugin) plugin).getConfig().getStringList("exclude").contains(player.getName())) {
-                Bukkit.broadcastMessage(Utils.chat(((Plugin) plugin).getConfig().getString("leave").replace("<player>", player.getName())));
+                String leaveFormatted = Utils.chat(((Plugin) plugin).getConfig().getString("leave").replace("<player>", player.getName()));
+                String leaveFormattedTwice = Utils.chat(leaveFormatted.replace("<online>", String.valueOf(Bukkit.getOnlinePlayers().size()) ));
+                Bukkit.broadcastMessage(leaveFormattedTwice);
             }
         }
     }

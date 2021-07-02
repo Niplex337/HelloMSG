@@ -26,15 +26,13 @@ class reloadcommand implements CommandExecutor{
 
 
         if (args.length == 0) {
-            player.sendMessage(Utils.chat("&bHelloMSG &dv2 &bhelp:"));
+            player.sendMessage(Utils.chat("&bHelloMSG &dv2.1 &bhelp:"));
             player.sendMessage(Utils.chat("&e/hellomsg &bPlugin help"));
             player.sendMessage(Utils.chat("&e/hellomsg reload &bReload configuration file"));
             player.sendMessage(Utils.chat(""));
-            player.sendMessage(Utils.chat("&d V2 Rewrite Changes: "));
-            player.sendMessage(Utils.chat("&a * Plugin rewrite, to make code readable, and other stuff!"));
-            player.sendMessage(Utils.chat("&a * "));
-            player.sendMessage(Utils.chat("&c - Goodbye, HelloInvis. Long live Excluding! (wait what?) "));
-            player.sendMessage(Utils.chat("&c - Remove create config command... "));
+            player.sendMessage(Utils.chat("&d V2.1 Changes: "));
+            player.sendMessage(Utils.chat("&a * Fixed Bugs"));
+            player.sendMessage(Utils.chat("&c + Added Online Players Variable to Messages"));
             return true;
         }
         if (args[0].equalsIgnoreCase("reload")) {
@@ -42,12 +40,12 @@ class reloadcommand implements CommandExecutor{
                 if(player.hasPermission("hellomsg.admin")) {
                     plugin.reloadConfig();
                     plugin.saveConfig();
-                    player.sendMessage(Utils.chat("&eReloaded configuration file of &bHelloMSG"));
+                    player.sendMessage(Utils.chat("&eReloaded &bHelloMSG &econfiguration file (v2.1) "));
                 }
             } else {
                 plugin.reloadConfig();
                 plugin.saveConfig();
-                Bukkit.getLogger().info("Reloaded configuration file of HelloMSG");
+                Bukkit.getLogger().info("Reloaded configuration file of HelloMSG v2.1");
 
             }
         }
